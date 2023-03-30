@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>성적관리</h1>
+    이름: <input type="text" id="name" /> <br />
+    국어: <input type="text" id="korean" /> <br />
+    영어: <input type="text" id="english" /> <br />
+    수학: <input type="text" id="math" /> <br />
+
+    <button type="button" onclick="goCalc()">결과확인</button>&nbsp;&nbsp;
+
+    <!-- reset태그는 input태그들 값을 모두 초기화 한다. -->
+    당신의 성적은 : <div id="result"></div>
+  </body>
+</html>
+
+<script>
+  function goCalc() {
+    name = document.getElementById("name").value;
+    korean = document.getElementById("korean").value;
+    english = document.getElementById("english").value;
+    math = document.getElementById("math").value;
+
+    korean = parseInt(korean);
+    english = parseInt(english);
+    math = parseInt(math);
+
+    total = korean + english + math;
+    avg = total / 3;
+
+    if (korean < 0 || korean > 101) {
+      alert("0과 100사이의 숫자를 입력하세요");
+      return false;
+    }
+
+    if (english < 0 || english > 101) {
+      alert("0과 100사이의 숫자를 입력하세요");
+      return false;
+    }
+
+    if (math < 0 || math > 101) {
+      alert("0과 100사이의 숫자를 입력하세요");
+      return false;
+    }
+
+    temp = `${name}의 총점은 ${total}이고 평균은 ${avg}입니다`;
+    document.getElementById("result").innerHTML = temp;
+  }
+  //     //  2.연산한다,.
+  //     if (goCalc == "1") {result = 600000 +  parseInt(worktime) * parseInt(perpay) ;
+  //     document.getElementById("result").innerHTML = result;
+
+  //   }
+</script>
+
+<!-- // if( oper=="3")
+// result = parseInt(x) + ParseInt(y);
+// else result={parseInt(x) /[[parseInt(y)]] } -->
