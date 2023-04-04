@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- 
+            form에 있는 중요속성
+            method:서버로 정보를 보내는 방법을 기술한다.get ,postemd
+            action: 서버에서 어떤 url이 정보를 받아서 처리할지를 지정해야한다.
+            app.use(url,)이 존재해야 한다. 이 속성을 생략하면 자신의 url
+            을 다시 호출한다
+            method를 생략하면 get방식이다.
+           -->
+    <form name="myform" action="/thirdassignment3" method="get">
+      이름: <input type="text" name="name" /> <br />
+      국어: <input type="text" name="kor" /> <br />
+      영어: <input type="text" name="eng" /> <br />
+      수학: <input type="text" name="math" /> <br />
+
+      <button type="button" id="btnCalc">성적은?</button>
+    </form>
+  </body>
+</html>
+<script>
+  window.onload = () => {
+    let btnCalc = document.getElementById("btnCalc");
+    btnCalc.addEventListener("click", () => {
+      document.forms[0].submit();
+    });
+  };
+</script>
+<!-- <button type="button" id="btnCalc">계산</button>
+
+    당신의 성적은 : <span id="result"></span> -->
+<!-- </body>
+</html>
+
+<script>
+  $(document).ready(() => {
+    $("#btnCalc").click(() => {
+      name = $("#name").val();
+      korean = parseInt($("#korean").val());
+      english = parseInt($("#english").val());
+      math = parseInt($("#math").val());
+      if (
+        korean < 0 ||
+        korean > 100 ||
+        english < 0 ||
+        english > 100 ||
+        math < 0 ||
+        math > 100
+      ) {
+        alert("0~100 사이의 점수를 입력하세요");
+        return false;
+      }
+      total = korean + english + math;
+      avg = total / 3;
+
+      temp = `${name}의 총점은 ${total}이고 평균점수는 ${avg}입니다.`;
+      $("#result").html(temp);
+    });
+  });
+</script>
+ -->
