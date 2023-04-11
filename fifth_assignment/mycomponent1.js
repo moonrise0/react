@@ -10,4 +10,7 @@ class Mycomponent1 extends Component {
   }
 }
 export default Mycomponent1;
+
+// 컴포넌트 외부로 노출시켜야 사용가능.
+// 컴포넌트 외부로 노출시켜야 사용가능.
 // 컴포넌트 외부로 노출시켜야 사용가능.
