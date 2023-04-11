@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>성적관리</h1>
+    이름: <input type="text" id="name" /> <br />
+    국어: <input type="text" id="korean" /> <br />
+    영어: <input type="text" id="english" /> <br />
+    수학: <input type="text" id="math" /> <br />
+
+    <button type="button" id="btnCalc">계산</button>
+
+    당신의 성적은 : <span id="result"></span>
+  </body>
+</html>
+
+<script>
+  $(document).ready(() => {
+    $("#btnCalc").click(() => {
+      name = $("#name").val();
+      korean = parseInt($("#korean").val());
+      english = parseInt($("#english").val());
+      math = parseInt($("#math").val());
+      if (
+        korean < 0 ||
+        korean > 100 ||
+        english < 0 ||
+        english > 100 ||
+        math < 0 ||
+        math > 100
+      ) {
+        alert("0~100 사이의 점수를 입력하세요");
+        return false;
+      }
+      total = korean + english + math;
+      avg = total / 3;
+
+      temp = `${name}의 총점은 ${total}이고 평균점수는 ${avg}입니다.`;
+      $("#result").html(temp);
+    });
+  });
+</script>
+
+<!-- // if( oper=="3")
+// result = parseInt(x) + ParseInt(y);
+// else result={parseInt(x) /[[parseInt(y)]] } -->

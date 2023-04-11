@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+  </head>
+  <body>
+    <p>급여 계산창</p>
+    이름: <input type="text" id="name" /> <br />
+    시간: <input type="text" id="worktime" /> <br />
+    시간당급여: <input type="text" id="perpay" /> <br />
+    <!-- 주급은 : <input type="text" id="result" readonly /> <br /> -->
+    당신의 주급은 :
+    <div id="result"></div>
+
+    <button type="button" id="btnConfirm">계산</button>
+    <button type="button" id="btnClear">삭제</button>
+  </body>
+</html>
+
+
+
+<script>
+  $("#btnConfirm").click(() => {
+    worktime = parseInt($("#worktime").val());
+    perpay = parseInt($("#perpay").val());
+
+    base_pay = worktime * perpay;
+    over_pay = 0;
+    if (worktime > 20) {
+      over_pay = (worktime - 20) * perpay * 0.5;
+    }
+
+    temp = `${name}의 기본급은 ${base_pay}이고 수당은 ${over_pay}이고 총액은 ${
+      base_pay + over_pay
+    }입니다`;
+
+    $("#result").html(temp);
+  });
+
+  $("#btnClear").click(() => {
+    $("input").val("");
+  });
+</script>

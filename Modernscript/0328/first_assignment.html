@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>first_assignment</h1>
+  </body>
+</html>
+
+<script>
+  let k = [
+    { name: "홍길동", worktime: 40, salary: 10000 },
+    { name: "임꺽정", worktime: 15, salary: 20000 },
+    { name: "장길산", worktime: 20, salary: 20000 },
+    { name: "강감찬", worktime: 30, salary: 15000 },
+    { name: "이순신", worktime: 40, salary: 30000 },
+  ];
+ 
+  let r = k.map((r)=>{
+             r.total = (r.worktime * r.salary);
+            return r;
+
+         });
+         console.log(r);
+
+//    k.map((r)=>{
+//      r.total = r.worktime * r.salary;
+//      r.avg = r.total /5;
+//      return r;
+//    })
+
+// console.log(r);
+
+// <!-- </script>
+ 

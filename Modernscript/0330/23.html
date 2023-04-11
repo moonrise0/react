@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <button type="button" id="215" style="background-color: moccasin">
+      배경색
+    </button>
+    <button type="button" id="2215" style="background-color: red">
+      배경색
+    </button>
+    <button type="button" id="11215" style="background-color: blue">
+      배경색
+    </button>
+    <button type="button" id="152215" style="background-color: violet">
+      배경색
+    </button>
+    <button type="button" id="1782115" style="background-color: white">
+      배경색
+    </button>
+  </body>
+</html>
+
+<script>
+  //여러개의 버튼이 하나의 함수를 공유할떄 매개변수를 붙이면 이벤트가 발생한 객체를 전달한다.
+
+
+   
+   
+   $("button").click((btn)=> {
+    console.log(btn);
+
+             $("body").css("background-color",
+             $("#"+btn.target.id).css("background-color")); 
+   })
+
+
+
+
+  // $("#btn1").click((btn)=>{
+        //  $(document).ready(()=>{
+        //   $("#btn1").click(()=>{
+        //     $("body").css("background-color");
+        //     $("#btn1").css("background-color");
+        //   })
+
+
+        //  })
+
+</script>
+
