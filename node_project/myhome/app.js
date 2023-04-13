@@ -3,6 +3,8 @@ let express = require("express");
 let path = require("path");
 let cookieParser = require("cookie-parser");
 let logger = require("morgan");
+let cors = require("cors");
+
 const session = require("express-session");
 const MYSQLSTORE = require("express-mysql-session")(session);
 
@@ -10,9 +12,9 @@ const DBInfo = require("./routes/commonDB");
 // ㄴ>session이 저장 될 db의 정보를 줘야한다.
 let indexRouter = require("./routes/index");
 let usersRouter = require("./routes/users");
-let boardRouter = require("./routes/board");
+let scoreRouter = require("./routes/score");
 let memberRouter = require("./routes/member");
-
+// let heroRouter = require("./routes/hero");
 let app = express();
 
 // view engine setup
@@ -36,12 +38,13 @@ app.use(
     saveUninitialized: false,
   })
 );
+app.use(cors());
 
 app.use("/", indexRouter);
 app.use("/users", usersRouter);
-app.use("/board", boardRouter);
+app.use("/score", scoreRouter);
 app.use("/member", memberRouter);
-
+// app.use("/score", heroRouter);
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
   next(createError(404));
