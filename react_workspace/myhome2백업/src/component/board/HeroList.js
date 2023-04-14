@@ -4,7 +4,7 @@ import axios from "axios";
 import { SERVERIP } from "../../CommonUtil";
 import { Link } from "react-router-dom";
 
-function ScoreList(props) {
+function HeroList(props) {
   const [scoreList, setScoreList] = useState([]);
   const [loading, setLoading] = useState(false);
 
@@ -78,7 +78,7 @@ function ScoreList(props) {
                   <tr key={index}>
                     <td>{item.id}</td>
                     <td>
-                      <Link to={"/board/view/" + item.id}>
+                      <Link to={"/hero/view/" + item.id}>
                         {item.hero_name}
                       </Link>
                     </td>
@@ -90,7 +90,7 @@ function ScoreList(props) {
         </tbody>
       </table>
       <div>
-        <Link className="btn btn-danger" to="/board/write">
+        <Link className="btn btn-danger" to="/hero/write">
           글쓰기
         </Link>
       </div>
@@ -98,4 +98,4 @@ function ScoreList(props) {
   );
 }
 
-export default BoardList;
+export default HeroList;

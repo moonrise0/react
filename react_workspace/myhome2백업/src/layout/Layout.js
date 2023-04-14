@@ -19,9 +19,9 @@ function Layout() {
               </NavLink>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">
-                Link
-              </a>
+              <NavLink className="nav-link" to="/hero/list">
+               영웅
+               </NavLink>
             </li>
             <li className="nav-item">
               <a className="nav-link disabled" href="#">
